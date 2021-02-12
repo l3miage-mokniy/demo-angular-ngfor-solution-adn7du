@@ -1,0 +1,12 @@
+<h1>Démonstration ngFor</h1>
+<button (click)="append()">APPEND</button>
+<ol>
+  <li *ngFor="let e of L; trackBy: trackById">
+    <input type="checkbox"
+           [ngModel]="e.b"
+           (ngModelChange) = "update(e, {b: $event})" />
+    <label>{{e.s}}</label>
+    <button (click)="del(e)">DEL</button>
+    <app-pipo></app-pipo>
+  </li>
+</ol>
